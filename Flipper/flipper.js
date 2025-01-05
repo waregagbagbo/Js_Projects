@@ -10,7 +10,7 @@ const btn =  document.getElementById('btns');
 const colorFlavor = document.getElementById('colors');
 
 btn.addEventListener('click', function(){
-    // generate a random color index from 0 to colors.length - 1
+    // generate a random index from 0 to colors.length - 1
     const randomColor = Math.floor(Math.random() * colors.length-1);
     
     // change the body background color
@@ -18,7 +18,7 @@ btn.addEventListener('click', function(){
 
     // display the color used
     /*if(colorFlavor){
-        colorFlavor.textContent += `${colors[randomColor]}`
+        colorFlavor.textContent = `${colors[randomColor]}`
         
     }*/
 })

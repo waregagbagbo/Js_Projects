@@ -1,0 +1,79 @@
+/* General Styles */
+* { margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  }
+  
+  /* Navigation Styles */
+  nav {
+    background-color:rgb(245, 220, 226); /* Background color of the navigation bar */
+    position: fixed; /* Position the navigation bar fixed at the top */
+    top: 0px;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* Ensure it's on top of other elements */
+  }
+  
+  .nav-center {
+    display: flex;
+    justify-content: space-between; /* Space between header and links */
+    align-items: center;
+    max-width: 1120px; /* Limit the width of the navigation */
+    margin: 0 auto; /* Center the navigation horizontally */
+    padding: 1rem; 
+  }
+  
+  /* Nav Header Styles */
+  .nav-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .imgs {
+    height: 50px; /* Adjust logo height as needed */
+  }
+  
+  .nav-toggle {
+    background: transparent;
+    border: none;
+    color:#000;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  
+  /* Nav Links Styles */
+  .links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .links li {
+    margin: 0 0.5rem;
+  }
+  
+  .links a {
+    color:#000;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .links a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+  }
+  
+  /* Responsive Styles (Optional) */
+  @media screen and (max-width: 768px) { 
+    .links {
+      display: none; /* Hide links on smaller screens */
+    }
+  }
+
+.spans{
+    justify-content: space-around;
+    margin:30px;
+}
