@@ -7,5 +7,9 @@ image.appendChild = "https://www.100jsprojects.com/project/navbar"
 
 // add it to the eventListener
 toggle.addEventListener('click', function() {
-    links.classList.toggle('show-menu')
+    if (links.classList.contains('show-menu'))
+        links.classList.toggle('show-menu')
+    else {
+        links.classList.add('show-menu')
+    }
 })
