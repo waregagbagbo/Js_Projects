@@ -1,89 +1,97 @@
-    /* General Styles */
-    
-    * {
+    body {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background: #f1f5f8;
+        line-height: 2.2;
+        font-size: 0.875rem;
     }
     
-    body {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    ul {
+        list-style-type: none;
+        font-size: 1.2em;
     }
-    /* Navigation Styles */
+    
+    a {
+        text-decoration: none;
+    }
     
     nav {
-        background-color: rgb(158, 2, 38);
-        /* Background color of the navigation bar */
-        top: 0px;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-        /* Ensure it's on top of other elements */
+        background: rgb(207, 17, 17);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     
-    .nav-center {
-        display: flex;
-        justify-content: space-between;
-        /* Space between header and links */
-        align-items: center;
-        max-width: 1120px;
-        /* Limit the width of the navigation */
-        margin: 0 auto;
-        /* Center the navigation horizontally */
-        padding: 1rem;
+    .fa-bars {
+        font-size: 1.5rem;
+        color: #e94949;
+        cursor: pointer;
     }
-    /* Nav Header Styles */
+    
+    .fa-bars:hover {
+        color: black;
+    }
+    
+    .menu a {
+        color: white;
+        letter-spacing: 0.1rem;
+        display: block;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s linear;
+    }
+    
+    .menu a:hover {
+        background: #f8a5a5;
+        color: #e94949;
+        padding-left: 1.5rem;
+    }
+    
+    .menu {
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s linear;
+    }
+    
+    .show-menu {
+        height: 10rem;
+    }
     
     .nav-header {
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
     }
     
-    .imgs {
-        height: 50px;
-        /* Adjust logo height as needed */
-    }
-    
-    .nav-toggle {
-        background: transparent;
-        border: none;
-        color: #000;
-        cursor: pointer;
-        font-size: 1.5rem;
-        display: block;
-    }
-    /* Nav Links Styles */
-    
-    .links {
-        list-style: none;
-        display: flex;
-    }
-    
-    .links li {
-        margin: 0 0.5rem;
-    }
-    
-    .links a {
-        color: #000;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        transition: all 0.3s ease;
-        /* Smooth transition for hover effect */
-    }
-    
-    .links a:hover {
-        color: rgba(255, 255, 255, 255);
-        /* Subtle hover effect */
-    }
-    /* Responsive Styles (Optional) */
-    
-    @media screen and (max-width: 768px) {
-        .links {
-            display: block;
-            /* Hide links on smaller screens */
+    @media (min-width: 800px) {
+        .nav-main {
+            max-width: 1170px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+        .nav-header {
+            padding: 0;
+        }
+        .fa-bars {
+            display: none;
+        }
+        .menu {
+            height: auto;
+            display: flex;
+        }
+        .menu a {
+            padding: 0;
+            margin: 0 0.5rem;
+        }
+        .menu a:hover {
+            padding: 0;
+            background: transparent;
         }
     }
     
-    .show-links {
-        height: 5rem;
+    img {
+        height: 50px;
+        position: inherit;
     }
