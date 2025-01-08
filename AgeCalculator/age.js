@@ -15,13 +15,14 @@ const fom = document.getElementById('form');
 // get result display
 const ageDisplay =  document.getElementById('ageDisplay');
 
-// let us handle form submission
+// movie display
+const movie = document.getElementById('movies')
 
+// let us handle form submission
 fom.addEventListener('submit', (event)=>{
     event.preventDefault(); // Prevents default form submission
 
-    // grab birthday logics
-    // grab the id for date
+    // grab birthday logics grab the id for date
 const birthdayValue = document.getElementById('birthday').value;
     if(!birthdayValue){
         ageDisplay.textContent = `Please enter a valid date? `
@@ -42,5 +43,14 @@ const birthdayValue = document.getElementById('birthday').value;
     }
     // display the result
         ageDisplay.textContent = `You are ${age} years old.`
+        if( age >= 18){
+            movie.textContent = 'Additinally,you are allowed to take alcohol and enjoy swimming'
+            
+        }
+        else{
+            movie.textContent =' Meaning you are still undergage'
+        }   
+
+        
 
 })
