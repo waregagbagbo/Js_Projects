@@ -11,3 +11,16 @@ const years = date.getFullYear();
 const months =  date.getMonth()+1;
 // create day
 const days = date.getDate();
+const fullDate = `${months}/${days}/${years}`
+console.log(fullDate)
+// grab form field
+const fom = document.querySelector('.forms');
+// grab the id for date
+const birthday = document.getElementById('birthday');
+
+// get result display
+const ageDisplay =  document.getElementById('ageDisplay');
+
+
+fom.addEventListener('click', ()=>{
+})
