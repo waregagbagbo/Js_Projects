@@ -5,17 +5,12 @@
 
 // create a date object first
 const dates = new Date();
-// create year
-const years = date.getFullYear();
-// create month
-const months =  date.getMonth()+1;
+
 // create day
-const days = date.getDate();
-const fullDate = `${months}/${days}/${years}`
+const days = dates.getDate();
+
 // grab form field
-const fom = document.querySelector('.forms');
-// grab the id for date
-const birthday = document.getElementById('birthday').value;
+const fom = document.getElementById('form');
 
 // get result display
 const ageDisplay =  document.getElementById('ageDisplay');
@@ -26,15 +21,17 @@ fom.addEventListener('submit', (event)=>{
     event.preventDefault(); // Prevents default form submission
 
     // grab birthday logics
-    if(!birthday){
+    // grab the id for date
+const birthdayValue = document.getElementById('birthday').value;
+    if(!birthdayValue){
         ageDisplay.textContent = `Please enter a valid date? `
         return;
     }
-    const birth = new Date(birthday);
+    const birth = new Date(birthdayValue);
 
     // calculate age
     let age = dates.getFullYear() - birth.getFullYear();
-    const monthDifference =  dates.getMonth() -  birth.getMonth();
+    const monthDifference =  dates.getMonth()+1 -  birth.getMonth()+1;
 
     // adjust for months
     if(
