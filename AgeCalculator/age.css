@@ -57,9 +57,9 @@ forms input[type="date"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    width: 100%;
+    width:100%;
     max-width: 300px;
-    margin:10px 10px;
+    margin:10px;
 }
 .forms input[type="submit"] {
     background-color: #007bff;
@@ -67,7 +67,9 @@ forms input[type="date"] {
     padding:5px;
     border: none;
     border-radius: 5px;
-    font-size:1em;
+    font-size:0.8rem;
+    margin:5px;
+    width:25%;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }

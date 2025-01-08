@@ -11,6 +11,3 @@ const years = date.getFullYear();
 const months =  date.getMonth()+1;
 // create day
 const days = date.getDate();
-
-console.log(`${months} ${days} ${years}`)
-console.log(date)
