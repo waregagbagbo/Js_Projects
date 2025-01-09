@@ -11,7 +11,14 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    height:30vh;
+    height:50vh;
+}
+main{
+box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+width: 50%;
+max-width:600px;
+padding:40px;
+margin:20px;
 }
 .container{
     margin-bottom:20px;
@@ -19,5 +26,33 @@ body{
 h4{
     font-size:2.2rem;
     font-weight: 700;
+}
+.container form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.container label{
+    font-size: 1rem;
+    color:#333;
+}
+.container input[type="submit"]{
+    background-color: green;
+    color:#fff;
+    padding:5px;
+    border:none;
+    border-radius:5px;
+    font-size:0.8rem;
+    margin:5px;
+    width:25%;
+    cursor:pointer;
+    transition: background-color 0.3s ease;
+}
+.container input[type="submit"]:hover{
+    background-color: #000;
+
+}
+#forms{
+    padding: 10px;
 }
 

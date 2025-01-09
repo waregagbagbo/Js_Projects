@@ -14,9 +14,13 @@
             <div class="container">
                 <p class="tips"></p>
                 <form action="#" id="forms">
-                    <form aria-label="ins">Bill Amount:</form>
-
+                    <label for="bill">Bill Amount:</label>
+                    <input type="text">
+                    <label for="tip">Tip Percentage:</label>
+                    <input type="text">
+                    <input type="submit" value="Calculate">
                 </form>
+                <p id="final"></p>
             </div>
         </main>       
         <script src="tip.js" async defer></script>
