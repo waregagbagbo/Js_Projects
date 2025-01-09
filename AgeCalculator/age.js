@@ -44,7 +44,7 @@ const birthdayValue = document.getElementById('birthday').value;
     // display the result
         ageDisplay.textContent = `You are ${age} years old.`
         if( age >= 18){
-            movie.textContent = 'Additinally,you are allowed to take alcohol and enjoy swimming'
+            movie.textContent = 'Additionally,you are allowed to take alcohol and enjoy swimming'
             
         }
         else{
