@@ -30,11 +30,11 @@ h4{
 .container form{
     display:flex;
     flex-direction:column;
-    align-items:center;
+    align-items:left;
 }
 .container label{
     font-size: 1rem;
-    color:#333;
+    color:#de3737;    
 }
 .container input[type="submit"]{
     background-color: green;
@@ -53,6 +53,7 @@ h4{
 
 }
 #forms{
-    padding: 10px;
+    padding:10px;
+    text-align:left;
 }
 
