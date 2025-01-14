@@ -20,13 +20,13 @@ formLogic.addEventListener('submit', (event) =>{
     const tipPercent = document.getElementById('tipId').value;
      
     // find the percent
-    let percenResult = getBill - tipPercent;
+    let percenResult = getBill *(tipPercent/100);
 
     // find the actualResult
-    let actualResult = percenResult + getBill;
+    let actualResult = Number(percenResult) + Number(getBill);
 
     // display the result
-    finalResult.textContent = `The tip to pay is ${actualResult}`;
+   finalResult.innerHTML = `The tip to pay is ${actualResult}`;
 })
 
 // create a function that handles this calculation
