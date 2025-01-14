@@ -14,7 +14,9 @@ const ChangeBtn =  document.getElementById('changeColor')
 // We will use EventListener to achieve logics in with respect to button
 ChangeBtn.addEventListener('click', function(){
     // let us randomly check for the color but let us loop through the color array
-    document.body.style.backgroundColor = 'beige';
-
-    
+    for(let i=0; i < colors.length; i++){
+        let randomColor= Math.floor(Math.random() * i);
+        colorChange.textContent = `Color Present is ${randomColor}`
+    } 
+    document.body.style.backgroundColor = 'pink'   
 })
