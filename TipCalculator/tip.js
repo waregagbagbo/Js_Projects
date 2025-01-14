@@ -26,7 +26,7 @@ formLogic.addEventListener('submit', (event) =>{
     let actualResult = Number(percenResult) + Number(getBill);
 
     // display the result
-   finalResult.innerHTML = `The tip to pay is ${actualResult}`;
+   finalResult.innerHTML = `The total tip to pay is KES ${actualResult}.`;
 })
 
 // create a function that handles this calculation
