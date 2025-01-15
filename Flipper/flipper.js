@@ -5,8 +5,8 @@
 const colorChange =  document.getElementById('colorId');
 
 // initialize the set of color array
-const colors = ['beige','green','purple','blue','skyblue',
-    'maroon','pink','brown','darkgreen','cream','yellow'];
+const colors = ['Beige','Green','Purple','Blue','Skyblue',
+    'Maroon','Pink','Brown','Darkgreen','Cream','Yellow'];
 
 // grab the button iteme
 const ChangeBtn =  document.getElementById('changeColor')
