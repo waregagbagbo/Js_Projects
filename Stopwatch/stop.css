@@ -5,16 +5,35 @@
     }
     
     body {
-        background-color: beige;
+        background-color: palegreen;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         text-align: center;
         font-size: 2rem;
     }
     
     main {
-        margin: 50px 40px;
+        margin: 50px;
     }
     
     main h1 {
         align-items: center;
+    }
+    
+    .results {
+        margin: 40px 80px;
+        padding: 60px;
+    }
+    
+    container {
+        padding: 30px;
+        margin: 20px 10px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    button {
+        border-radius: 20px;
+        padding: 20px 60px;
+        cursor: pointer;
+        margin-left: 30px;
     }
