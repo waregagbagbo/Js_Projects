@@ -8,14 +8,14 @@ const resultTimer = document.getElementById('result');
 // grab the start buttons
 const starts = document.getElementById('start');
 // stop button
-const stops = document.getElementById('stops');
+const stops = document.getElementById('stop');
 // restart
 const resets = document.getElementById('reset');
 
 // initialize time values
 let startTimer = 0;
 let elapsedTime = 0;
-let timeInterval = 0;
+let timeInterval;
 
 // set the function time format
 
@@ -48,9 +48,9 @@ function startsTimer() {
 
 // function to stopTimer
 function stopsTimer() {
-    clearInterval(timeInterval);
+    clearInterval(timeInterval)
 
-    starts.disabled = false;
+    starts.disabled = true;
     stops.disabled = true;
 }
 // function to resetTimer
@@ -66,5 +66,5 @@ function resetTimer() {
 
 // append these to EventListeners
 starts.addEventListener('click', startsTimer);
-//stops.addEventListener('click', stopsTimer);
 resets.addEventListener('click', resetTimer);
+stops.addEventListener('click', stopsTimer);
