@@ -57,8 +57,8 @@ function stopsTimer() {
 function resetTimer() {
     clearInterval(timeInterval);
 
+    resetTimer.textContent = "00:00:00.0";
     elapsedTime = 0;
-    resetTimer.textContent = "00:00:00.00";
 
     starts.disabled = false;
     stops.disabled = true;
