@@ -49,6 +49,7 @@ function startsTimer() {
 // function to stopTimer
 function stopsTimer() {
     clearInterval(timeInterval);
+
     starts.disabled = false;
     stops.disabled = true;
 }
@@ -65,5 +66,5 @@ function resetTimer() {
 
 // append these to EventListeners
 starts.addEventListener('click', startsTimer);
-stops.addEventListener('click', stopsTimer);
+//stops.addEventListener('click', stopsTimer);
 resets.addEventListener('click', resetTimer);
