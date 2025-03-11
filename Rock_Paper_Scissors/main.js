@@ -1,7 +1,6 @@
-// declare global variable of players
-// initialize the values if they will hold numerical values later unless otherwise
-let humanScore = 0;
-let computerScore = 0;
+function playGame(){
+  let humanScore = 0;
+  let computerScore = 0;
 
 // create a  function and set the global vars as args in the function
 function playRound(humanChoice,computerChoice){
@@ -9,32 +8,47 @@ function playRound(humanChoice,computerChoice){
   // computer choice logic
   const humanSelection = ()=>{
     // make the humanchoice case insesitive
-    let choice = humanChoice.toLowerCase();
-    choice = prompt('Start the game. Key in preferences of ("rock","paper","scissors")')
-    return humanSelection
+    //let choice = humanChoice.toLowerCase();
+    let choice = prompt('Start the game. Key in preferences of ("rock","paper","scissors")')
+    return choice.toLowerCase()
   };
 
   // computer choice
   const computerSelection = () =>{
     let computerChoice = ['rock','paper','scissors'];
     let final  = Math.floor(Math.random() * computerChoice.length)
-    return computerSelection[final]
+    return computerChoice[final]
   };  
+
+  let humanChoice = humanSelection();
+  let computerChoice = computerSelection();
   
   // apply conditions
-  if(humanSelection === computerSelection){
+  if(humanChoice === computerChoice){
     return ("Equal")
   }
-  else if(humanSelection > computerSelection){
+  else if(
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "scissors" && computerChoice === "paper") ||
+    (humanChoice === "paper" && computerChoice === "rock")
+  ){
     humanScore += 1
-    return ("Rock beats paper")
-  }
-  else if(computerSelection > humanSelection){
-    computerScore = computerScore + 1
-    return ("Scissors beats paper")    
+    return ("You win! " + humanChoice + " beats " + computerChoice)
   }
   else{
-    return ("You lose! paper beats rock")
+    computerScore +=1;
+    return `You lose! ${computerChoice} beats ${humanChoice}`
   }
 }
-console.log(playRound(humanSelection, computerSelection))
+// return multiple rounds
+for(let i=0; i < 5; i++){
+  console.log(playRound())
+}
+// return the final score
+console.log(`Human Score: ${humanScore} Computer Score: ${computerScore}`)
+if(humanScore > computerScore){
+  console.log("You win the game!");
+
+}
+}
+playGame()
