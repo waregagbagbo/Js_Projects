@@ -8,16 +8,15 @@ function playRound(humanChoice,computerChoice){
   // human choice logic
   const humanSelection = ()=>{
     // make the humanchoice case insesitive
-    //let choice = humanChoice.toLowerCase();
-    let choice = prompt('Start the game. Key in preferences of ("rock","paper","scissors")')
-    return choice.toLowerCase()
+    let makeChoice = prompt('Start the game. Key in preferences of ("rock","paper","scissors")')
+    return makeChoice.toLowerCase()
   };
 
   // computer choice
   const computerSelection = () =>{
     let computerChoice = ['rock','paper','scissors'];
-    let final  = Math.floor(Math.random() * computerChoice.length)
-    return computerChoice[final]
+    let finalOutput  = Math.floor(Math.random() * computerChoice.length)
+    return computerChoice[finalOutput]
   };  
 
   // set the human and computer choices functions to variables
