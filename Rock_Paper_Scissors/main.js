@@ -5,7 +5,7 @@ function playGame(){
 // create a  function and set the global vars as args in the function
 function playRound(humanChoice,computerChoice){
  
-  // computer choice logic
+  // human choice logic
   const humanSelection = ()=>{
     // make the humanchoice case insesitive
     //let choice = humanChoice.toLowerCase();
@@ -20,6 +20,7 @@ function playRound(humanChoice,computerChoice){
     return computerChoice[final]
   };  
 
+  // set the human and computer choices functions to variables
   let humanChoice = humanSelection();
   let computerChoice = computerSelection();
   
@@ -51,4 +52,10 @@ if(humanScore > computerScore){
 
 }
 }
-playGame()
+/*playGame()
+
+const maj = document.querySelector('.major')
+maj.addEventListener('click',playGame =>{
+  console.log('clicked')
+  playGame()
+})*/
