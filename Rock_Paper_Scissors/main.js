@@ -1,3 +1,5 @@
+// We will define our DOM parameter
+
 function playGame(){
   let humanScore = 0;
   let computerScore = 0;
@@ -41,8 +43,8 @@ function playRound(humanChoice,computerChoice){
   }
 }
 // return multiple rounds
-for(let i=0; i < 5; i++){
-  console.log(playRound())
+//for(let i=0; i < 5; i++){
+  //console.log(playRound())
 }
 // return the final score
 console.log(`Human Score: ${humanScore} Computer Score: ${computerScore}`)
@@ -50,11 +52,5 @@ if(humanScore > computerScore){
   console.log("You win the game!");
 
 }
-}
-/*playGame()
 
-const maj = document.querySelector('.major')
-maj.addEventListener('click',playGame =>{
-  console.log('clicked')
-  playGame()
-})*/
+
