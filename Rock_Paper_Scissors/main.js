@@ -3,6 +3,28 @@ const rock = document.getElementById('btn1');
 const paper = document.getElementById('btn2');
 const scissors = document.getElementById('btn3');
 
+// get the listener for rock
+rock.addEventListener('click', function(){
+  playRound('rock');
+});
+
+// get the listener for paper
+paper.addEventListener('click',function(){
+  playRound('paper');
+})
+
+// get the listener for scissors
+scissors.addEventListener('click',function(){
+  playRound('scissors');
+});
+
+
+
+
+
+
+
+
 
 // We will define our playRound function
 function playGame(){
@@ -47,15 +69,15 @@ function playRound(humanChoice,computerChoice){
     return `You lose! ${computerChoice} beats ${humanChoice}`
   }
 }
+}
+playGame();
 // return multiple rounds
 //for(let i=0; i < 5; i++){
   //console.log(playRound())
-}
+//}
 // return the final score
 //console.log(`Human Score: ${humanScore} Computer Score: ${computerScore}`)
 //if(humanScore > computerScore){
  // console.log("You win the game!");
 
 //}
-
-
