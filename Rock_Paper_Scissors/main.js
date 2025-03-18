@@ -1,33 +1,22 @@
-// We will define our playRound function
-function playGame(){
-  let humanScore = 0;
-  let computerScore = 0;
+// define our global variables
+let humanScore = 0;
+let computerScore = 0;
 
 // create a  function and set the global vars as args in the function
-function playRound(humanChoice,computerChoice){
- 
-  // human choice logic
- // const humanSelection = ()=>{
-    // make the humanchoice case insesitive
-    //let makeChoice = prompt('Start the game. Key in preferences of ("rock","paper","scissors")')
-    //return makeChoice.toLowerCase()
- // };
- const humanSelection = humanChoice;
+function playRound(humanChoice){
 
   // computer choice
-  const computerSelection = () =>{
-    let computerChoice = ['rock','paper','scissors'];
-    let finalOutput  = Math.floor(Math.random() * computerChoice.length)
-    return computerChoice[finalOutput]
+  let computerChoice = computerPlay();
+  // function to get computer choice
+  function computerPlay(){
+    let computerSelection = ['rock','paper','scissors'];
+    let finalOutput  = Math.floor(Math.random() * computerSelection.length)
+    return computerSelection[finalOutput]
   };  
-
-  // set the human and computer choices functions to variables
-  humanChoice = humanSelection();
-  computerChoice = computerSelection();
   
-  // apply conditions
+  // apply conditions for choices
   if(humanChoice === computerChoice){
-    return ("Equal")
+    return ("It is a tie!")
   }
   else if(
     (humanChoice === "rock" && computerChoice === "scissors") ||
@@ -42,10 +31,31 @@ function playRound(humanChoice,computerChoice){
     return `You lose! ${computerChoice} beats ${humanChoice}`
   }
 }
-playRound()
-console.log(`Human Score: ${humanScore} Computer Score: ${computerScore}`)
+
+
+//DOM Maninpulation, for the selections
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+const result = document.querySelector('.result');
+const score = document.querySelector('.score');
+//const humanScore = document.querySelector('.humanScore');
+//const computerScore = document.querySelector('.computerScore');
+
+// function to display Result
+function displayResult(message){
+  result.textContent = message;
+  score.textContent = `Human Score: ${humanScore} Computer Score: ${computerScore}`
 }
-playGame()
 
-
-//DOM Maninpulation
+rock.addEventListener('click',()=>{
+  console.log("Rock button clicked!");
+  displayResult(playRound('rock'));
+})
+paper.addEventListener('click',()=>{
+  displayResult(playRound('paper'))
+ 
+})
+scissors.addEventListener('click',()=>{
+  displayResult(playRound('scissors'));
+})
