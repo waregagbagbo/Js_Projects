@@ -1,31 +1,3 @@
-// We will define our DOM parameter
-const rock = document.getElementById('btn1');
-const paper = document.getElementById('btn2');
-const scissors = document.getElementById('btn3');
-
-// get the listener for rock
-rock.addEventListener('click', function(){
-  playRound('rock');
-});
-
-// get the listener for paper
-paper.addEventListener('click',function(){
-  playRound('paper');
-})
-
-// get the listener for scissors
-scissors.addEventListener('click',function(){
-  playRound('scissors');
-});
-
-
-
-
-
-
-
-
-
 // We will define our playRound function
 function playGame(){
   let humanScore = 0;
@@ -35,11 +7,12 @@ function playGame(){
 function playRound(humanChoice,computerChoice){
  
   // human choice logic
-  const humanSelection = ()=>{
+ // const humanSelection = ()=>{
     // make the humanchoice case insesitive
-    let makeChoice = prompt('Start the game. Key in preferences of ("rock","paper","scissors")')
-    return makeChoice.toLowerCase()
-  };
+    //let makeChoice = prompt('Start the game. Key in preferences of ("rock","paper","scissors")')
+    //return makeChoice.toLowerCase()
+ // };
+ const humanSelection = humanChoice;
 
   // computer choice
   const computerSelection = () =>{
@@ -69,15 +42,10 @@ function playRound(humanChoice,computerChoice){
     return `You lose! ${computerChoice} beats ${humanChoice}`
   }
 }
+playRound()
+console.log(`Human Score: ${humanScore} Computer Score: ${computerScore}`)
 }
-playGame();
-// return multiple rounds
-//for(let i=0; i < 5; i++){
-  //console.log(playRound())
-//}
-// return the final score
-//console.log(`Human Score: ${humanScore} Computer Score: ${computerScore}`)
-//if(humanScore > computerScore){
- // console.log("You win the game!");
+playGame()
 
-//}
+
+//DOM Maninpulation
