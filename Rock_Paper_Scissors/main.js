@@ -1,5 +1,6 @@
 // We will define our DOM parameter
 
+// We will define our playRound function
 function playGame(){
   let humanScore = 0;
   let computerScore = 0;
@@ -22,8 +23,8 @@ function playRound(humanChoice,computerChoice){
   };  
 
   // set the human and computer choices functions to variables
-  let humanChoice = humanSelection();
-  let computerChoice = computerSelection();
+  humanChoice = humanSelection();
+  computerChoice = computerSelection();
   
   // apply conditions
   if(humanChoice === computerChoice){
