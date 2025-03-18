@@ -1,4 +1,8 @@
 // We will define our DOM parameter
+const rock = document.getElementById('btn1');
+const paper = document.getElementById('btn2');
+const scissors = document.getElementById('btn3');
+
 
 // We will define our playRound function
 function playGame(){
@@ -48,10 +52,10 @@ function playRound(humanChoice,computerChoice){
   //console.log(playRound())
 }
 // return the final score
-console.log(`Human Score: ${humanScore} Computer Score: ${computerScore}`)
-if(humanScore > computerScore){
-  console.log("You win the game!");
+//console.log(`Human Score: ${humanScore} Computer Score: ${computerScore}`)
+//if(humanScore > computerScore){
+ // console.log("You win the game!");
 
-}
+//}
 
 
