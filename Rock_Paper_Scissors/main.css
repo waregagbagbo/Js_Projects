@@ -1,0 +1,58 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main content */
+main {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Paragraph */
+p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Button container */
+.major {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:nth-child(1) { background-color: #ff7f7f; } /* Rock - Red */
+.btn:nth-child(2) { background-color: #7fbfff; } /* Paper - Blue */
+.btn:nth-child(3) { background-color: #7fff7f; } /* Scissors - Green */
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Results Section */
+#results {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+}
