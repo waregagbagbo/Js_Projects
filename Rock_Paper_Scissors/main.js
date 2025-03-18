@@ -1,22 +1,31 @@
-// define our global variables
-let humanScore = 0;
-let computerScore = 0;
+function playGame(){
+  let humanScore = 0;
+  let computerScore = 0;
 
 // create a  function and set the global vars as args in the function
-function playRound(humanChoice){
+function playRound(humanChoice,computerChoice){
+ 
+  // human choice logic
+  const humanSelection = ()=>{
+    // make the humanchoice case insesitive
+    let makeChoice = prompt('Start the game. Key in preferences of ("rock","paper","scissors")')
+    return makeChoice.toLowerCase()
+  };
 
   // computer choice
-  let computerChoice = computerPlay();
-  // function to get computer choice
-  function computerPlay(){
-    let computerSelection = ['rock','paper','scissors'];
-    let finalOutput  = Math.floor(Math.random() * computerSelection.length)
-    return computerSelection[finalOutput]
+  const computerSelection = () =>{
+    let computerChoice = ['rock','paper','scissors'];
+    let finalOutput  = Math.floor(Math.random() * computerChoice.length)
+    return computerChoice[finalOutput]
   };  
+
+  // set the human and computer choices functions to variables
+  let humanChoice = humanSelection();
+  let computerChoice = computerSelection();
   
-  // apply conditions for choices
+  // apply conditions
   if(humanChoice === computerChoice){
-    return ("It is a tie!")
+    return ("Equal")
   }
   else if(
     (humanChoice === "rock" && computerChoice === "scissors") ||
@@ -31,31 +40,21 @@ function playRound(humanChoice){
     return `You lose! ${computerChoice} beats ${humanChoice}`
   }
 }
-
-
-//DOM Maninpulation, for the selections
-const rock = document.querySelector('#rock');
-const paper = document.querySelector('#paper');
-const scissors = document.querySelector('#scissors');
-const result = document.querySelector('.result');
-const score = document.querySelector('.score');
-//const humanScore = document.querySelector('.humanScore');
-//const computerScore = document.querySelector('.computerScore');
-
-// function to display Result
-function displayResult(message){
-  result.textContent = message;
-  score.textContent = `Human Score: ${humanScore} Computer Score: ${computerScore}`
+// return multiple rounds
+for(let i=0; i < 5; i++){
+  console.log(playRound())
 }
+// return the final score
+console.log(`Human Score: ${humanScore} Computer Score: ${computerScore}`)
+if(humanScore > computerScore){
+  console.log("You win the game!");
 
-rock.addEventListener('click',()=>{
-  console.log("Rock button clicked!");
-  displayResult(playRound('rock'));
-})
-paper.addEventListener('click',()=>{
-  displayResult(playRound('paper'))
- 
-})
-scissors.addEventListener('click',()=>{
-  displayResult(playRound('scissors'));
-})
+}
+}
+/*playGame()
+
+const maj = document.querySelector('.major')
+maj.addEventListener('click',playGame =>{
+  console.log('clicked')
+  playGame()
+})*/
