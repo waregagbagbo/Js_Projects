@@ -1,4 +1,29 @@
-function playGame(){
+// DOM declaration
+const rocks = document.getElementById('rock');
+const papers = document.getElementById('paper');
+const scissor = document.getElementById('scissors');
+const results = document.querySelector('.result');
+const scores = document.querySelector('.score');
+const reset = document.querySelector('.reset');
+
+// Add the listeners for the buttons
+rocks.addEventListener('click', function(){
+ // console.log('rock')
+  playRound('rock')
+});
+
+papers.addEventListener('click', function(){
+  //console.log('paper')
+  playRound('paper')
+});
+
+scissor.addEventListener('click', function(){
+  //console.log('scissors')
+  playRound('scissors')
+});
+
+
+// Global variables
   let humanScore = 0;
   let computerScore = 0;
 
@@ -7,54 +32,35 @@ function playRound(humanChoice,computerChoice){
  
   // human choice logic
   const humanSelection = ()=>{
-    // make the humanchoice case insesitive
-    let makeChoice = prompt('Start the game. Key in preferences of ("rock","paper","scissors")')
-    return makeChoice.toLowerCase()
-  };
+    return humanChoice;
+  }
 
   // computer choice
   const computerSelection = () =>{
-    let computerChoice = ['rock','paper','scissors'];
-    let finalOutput  = Math.floor(Math.random() * computerChoice.length)
-    return computerChoice[finalOutput]
+    let computerSelector = ['rock','paper','scissors'];
+    let finalOutput  = Math.floor(Math.random() * computerSelector.length)
+    return computerSelector[finalOutput]
   };  
 
   // set the human and computer choices functions to variables
-  let humanChoice = humanSelection();
-  let computerChoice = computerSelection();
+  let humanTake = humanSelection();
+  computerChoice = computerSelection();
   
   // apply conditions
-  if(humanChoice === computerChoice){
+  if(humanTake === computerChoice){
     return ("Equal")
   }
   else if(
-    (humanChoice === "rock" && computerChoice === "scissors") ||
-    (humanChoice === "scissors" && computerChoice === "paper") ||
-    (humanChoice === "paper" && computerChoice === "rock")
+    (humanTake === "rock" && computerChoice === "scissors") ||
+    (humanTake === "scissors" && computerChoice === "paper") ||
+    (humanTake === "paper" && computerChoice === "rock")
   ){
     humanScore += 1
-    return ("You win! " + humanChoice + " beats " + computerChoice)
+    return ("You win! " + humanTake + " beats " + computerChoice)
   }
   else{
     computerScore +=1;
-    return `You lose! ${computerChoice} beats ${humanChoice}`
+    return `You lose! ${computerChoice} beats ${humanTake}`
   }
 }
-// return multiple rounds
-for(let i=0; i < 5; i++){
-  console.log(playRound())
-}
-// return the final score
-console.log(`Human Score: ${humanScore} Computer Score: ${computerScore}`)
-if(humanScore > computerScore){
-  console.log("You win the game!");
-
-}
-}
-/*playGame()
-
-const maj = document.querySelector('.major')
-maj.addEventListener('click',playGame =>{
-  console.log('clicked')
-  playGame()
-})*/
+playRound()
