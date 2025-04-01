@@ -2,37 +2,38 @@
 const rocks = document.getElementById('rock');
 const papers = document.getElementById('paper');
 const scissor = document.getElementById('scissors');
-const results = document.querySelector('.result');
+const results = document.querySelector('.results');
 const scores = document.querySelector('.score');
-const resets = document.getElementById('reset');
+const resets = document.getElementById('resetting');
 
 rocks.addEventListener('click', function(){
-    //results.innerHTML = playRound('rock')
-    playRound('rock')
+    results.innerHTML = playRound('rock',computerScore)
     scores.textContent = `You: ${humanScore} Computer: ${computerScore}`;
 }
 )
 papers.addEventListener('click', function(){
-    //results.innerHTML = playRound('paper')
-    playRound('paper')
+    results.innerHTML = playRound('paper',computerScore) 
     scores.innerHTML = `You: ${humanScore} Computer: ${computerScore}`
 }
 )
 
 scissor.addEventListener('click', function(){
-    //results.innerHTML = playRound('scissors')
-    playRound('scissors')
+    results.innerHTML = playRound('scissors',computerScore)
     scores.innerHTML = `You: ${humanScore} Computer: ${computerScore}`
 }
 )
-
-resets.addEventListener('click', function(){
+resets.addEventListener('reset', function(){
     humanScore = 0;
     computerScore = 0;
-    results.innerHTML = "Let's play again!";
-    scores.innerHTML = `You: ${humanScore} Computer: ${computerScore}`
+    if(humanScore === 5 || computerScore === 5){
+        results.innerHTML = "Game Over!"
+    }
+
+    //results.innerHTML = "Let's play again!";
+    //scores.innerHTML = `You: ${humanScore} Computer: ${computerScore}`
 }
-)
+);
+
 
 // Global variables
 let humanScore = 0;
@@ -43,13 +44,15 @@ function playRound(humanChoice,computerChoice){
  
   // human choice logic
   const humanSelection = ()=> {
-    if (rocks.checked === true) {
+    if(humanChoice === 'rock'){
         return 'rock'
-    } else if (papers.checked === true) {
+    }else if(humanChoice === 'paper'){
         return 'paper'
-    } else if (scissor.checked === true) {
+    }else if(humanChoice === 'scissors'){
         return 'scissors'
-    } 
+    }else{
+        return "error"
+    }
   }
     // computer choice
     function computerSelection() {
