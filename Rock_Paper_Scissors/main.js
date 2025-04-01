@@ -22,18 +22,12 @@ scissor.addEventListener('click', function(){
     scores.innerHTML = `You: ${humanScore} Computer: ${computerScore}`
 }
 )
-resets.addEventListener('reset', function(){
+resets.addEventListener('click',function(){
     humanScore = 0;
     computerScore = 0;
-    if(humanScore === 5 || computerScore === 5){
-        results.innerHTML = "Game Over!"
-    }
-
-    //results.innerHTML = "Let's play again!";
-    //scores.innerHTML = `You: ${humanScore} Computer: ${computerScore}`
-}
-);
-
+    results.innerHTML = "Game reset!"
+    scores.innerHTML = `You: ${humanScore} Computer: ${computerScore}`
+});
 
 // Global variables
 let humanScore = 0;
