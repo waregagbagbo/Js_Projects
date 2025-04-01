@@ -4,24 +4,35 @@ const papers = document.getElementById('paper');
 const scissor = document.getElementById('scissors');
 const results = document.querySelector('.result');
 const scores = document.querySelector('.score');
-const reset = document.querySelector('.reset');
+const resets = document.getElementById('reset');
 
-// Add the listeners for the buttons
 rocks.addEventListener('click', function(){
- // console.log('rock')
-  playRound('rock')
-});
-
-papers.addEventListener('click', function() {
-    //console.log('paper')
+    //results.innerHTML = playRound('rock')
+    playRound('rock')
+    scores.textContent = `You: ${humanScore} Computer: ${computerScore}`;
+}
+)
+papers.addEventListener('click', function(){
+    //results.innerHTML = playRound('paper')
     playRound('paper')
-});
+    scores.innerHTML = `You: ${humanScore} Computer: ${computerScore}`
+}
+)
 
-scissor.addEventListener('click', function() {
-    //console.log('scissors')
+scissor.addEventListener('click', function(){
+    //results.innerHTML = playRound('scissors')
     playRound('scissors')
-});
+    scores.innerHTML = `You: ${humanScore} Computer: ${computerScore}`
+}
+)
 
+resets.addEventListener('click', function(){
+    humanScore = 0;
+    computerScore = 0;
+    results.innerHTML = "Let's play again!";
+    scores.innerHTML = `You: ${humanScore} Computer: ${computerScore}`
+}
+)
 
 // Global variables
 let humanScore = 0;
@@ -31,10 +42,15 @@ let computerScore = 0;
 function playRound(humanChoice,computerChoice){
  
   // human choice logic
-  const humanSelection = ()=>{
-    return humanChoice;
+  const humanSelection = ()=> {
+    if (rocks.checked === true) {
+        return 'rock'
+    } else if (papers.checked === true) {
+        return 'paper'
+    } else if (scissor.checked === true) {
+        return 'scissors'
+    } 
   }
-
     // computer choice
     function computerSelection() {
         let choices = ['rock', 'paper', 'scissors']
@@ -43,24 +59,23 @@ function playRound(humanChoice,computerChoice){
     }
 
   // set the human and computer choices functions to variables
-  let humanTake = humanSelection();
+  humanChoice = humanSelection();
   computerChoice = computerSelection();
   
   // apply conditions
-  if(humanTake === computerChoice){
+  if(humanChoice === computerChoice){
     return ("Equal")
   }
   else if(
-    (humanTake === "rock" && computerChoice === "scissors") ||
-    (humanTake === "scissors" && computerChoice === "paper") ||
-    (humanTake === "paper" && computerChoice === "rock")
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "scissors" && computerChoice === "paper") ||
+    (humanChoice === "paper" && computerChoice === "rock")
   ){
     humanScore += 1
-    return ("You win! " + humanTake + " beats " + computerChoice)
+    return ("You win! " + humanChoice + " beats " + computerChoice)
   }
   else{
     computerScore +=1;
-    return `You lose! ${computerChoice} beats ${humanTake}`
+    return `You lose! ${computerChoice} beats ${humanChoice}`
   }
 }
-playRound()
