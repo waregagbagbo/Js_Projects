@@ -33,12 +33,13 @@ p {
 
 /* Buttons */
 .btn {
-    padding: 10px 20px;
+    padding: 10px 50px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
+    margin: 10px
 }
 
 .btn:nth-child(1) { background-color: #ff7f7f; } /* Rock - Red */
@@ -51,8 +52,13 @@ p {
 
 /* Results Section */
 #results {
-    margin-top: 20px;
+    margin-top: -20px;
     font-size: 20px;
     font-weight: bold;
     color: #444;
+}
+.reset{
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
 }
